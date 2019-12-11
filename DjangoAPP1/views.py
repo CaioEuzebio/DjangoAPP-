@@ -1,7 +1,10 @@
 from django.http import HttpResponse
 
 def home(response):
-    return(30)
+    return HttpResponse('Home')
 
 def clientes(request):
-    return('a')
+    return HttpResponse('A')
+
+def clientes_detalhe(request, id):
+    return HttpResponse(id)
