@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from .views import home, clientes, clientes_detalhe
+from .views import home, clientes, clientes_detalhe, clientes_por_nome
 
 urlpatterns = [
-    path(r'admin/', admin.site.urls),
     url(r'^clientes/(?P<id>\d{1,3})$', clientes_detalhe),
+    url(r'^clientes/(?P<nome>\w+)$', clientes_por_nome),
     url(r'^clientes', clientes),
     url(r'', home),
+    path(r'admin/', admin.site.urls),
 
 ]

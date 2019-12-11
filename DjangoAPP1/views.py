@@ -8,3 +8,6 @@ def clientes(request):
 
 def clientes_detalhe(request, id):
     return HttpResponse(id)
+
+def clientes_por_nome(request, nome):
+    return HttpResponse('Ola %s: ' % nome)
