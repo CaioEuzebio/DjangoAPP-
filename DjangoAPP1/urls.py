@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from .views import home, clientes, clientes_detalhe, clientes_por_nome
+from .views import home
+from clientes.views import clientes, clientes_detalhe, clientes_por_nome
 
 urlpatterns = [
     url(r'^clientes/(?P<id>\d{1,3})$', clientes_detalhe),
