@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    
+    {%block main%}
+
+    <h1>This is heading 1</h1>
+
+    <p>Condicional!</p>
+    {% if sexo == 'm' %}
+        Ola Senhor {{ nome }}
+    {% elif sexo == 'f' %}
+        Ola Senhora {{ nome }}
+    {% else %}
+        Ola {{ nome}}
+    {% endif %}
+
+
+    <ul>
+    <p>Utilizando loop na view!</p>
+    {% for pessoa in lista %}
+        
+        
+        {% if pessoa.sexo == 'm' %}
+        <li> Ola Senhor {{ pessoa.nome }}</li>
+        {% elif pessoa.sexo == 'f' %}
+        <li>Ola Senhora {{ pessoa.nome }} </li>
+        {% else %}
+        <li> Ola {{ pessoa.nome}}</li>
+        {% endif %}
+        
+        
+    {% endfor %}
+
+    </ul>
+
+   <button class="btn btn-info">Clique!</button>
+
+    {%endblock%}
+</body>
+</html>
