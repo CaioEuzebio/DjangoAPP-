@@ -1,0 +1,20 @@
+<h1>This is heading 1</h1>
+
+<p>Condicional!</p>
+{% if sexo == 'm' %}
+    Ola Senhor {{ nome }}
+{% elif sexo == 'f' %}
+    Ola Senhora {{ nome }}
+{% else %}
+    Ola {{ nome}}
+{% endif %}
+
+<br>
+
+<p>Utilizando loop na view!</p>
+{% for pessoa in lista %}
+    Ola {{ pessoa.nome }}
+    <br>
+{% endfor %}
+
+
