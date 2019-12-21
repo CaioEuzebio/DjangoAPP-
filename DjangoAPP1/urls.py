@@ -18,6 +18,9 @@ from django.urls import path
 from django.conf.urls import url
 from .views import home
 from clientes.views import clientes, clientes_detalhe, clientes_por_nome
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +30,4 @@ urlpatterns = [
     url(r'', home)
     
 
-]
+] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

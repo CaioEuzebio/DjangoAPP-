@@ -2,6 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+
+
+class Departamento(models.Model):
+    nome = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nome
+
 class CPF(models.Model):
     numero = models.CharField(max_length=20)
     data_exp = models.DateTimeField(auto_now=False)
@@ -18,7 +26,8 @@ class Clientes(models.Model):
     idade = models.IntegerField()
     email = models.EmailField()
     cpf = models.OneToOneField(CPF, blank=True, null=True, on_delete=models.PROTECT)
-
+    departamentos = models.ManyToManyField(Departamento, blank=True)
+    foto = models.ImageField(upload_to='clintes_fotos')
     def __str__(self):
         return self.nome
 

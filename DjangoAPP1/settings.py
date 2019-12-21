@@ -55,7 +55,11 @@ ROOT_URLCONF = 'DjangoAPP1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            
+            'solution_templates'
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +123,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'proj_statics'
+
+STATICFILES_DIRS = [
+    'static_files'
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media_files'

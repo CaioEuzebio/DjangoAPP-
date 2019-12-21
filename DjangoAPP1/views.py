@@ -1,5 +1,19 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, request
+from django.shortcuts import render
 
-def home(response):
-    return HttpResponse('Home')
+
+def home(request):
+    nome = 'Caio'
+    sexo = 'f'
+
+    lista = [
+            {'nome': 'pedro', 'sexo': 'm'},
+            {'nome': 'maria', 'sexo': 'f'},
+            {'nome': 'roberto', 'sexo': 'm'},
+    ]
+    data = {'lista': lista, 'sexo': sexo, 'nome': nome }
+
+    return render(request, 'index.html', data)
+
+
 
